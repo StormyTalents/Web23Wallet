@@ -1,0 +1,40 @@
+{
+  "name": "Web23-HederaWallet",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "Web23-HederaWallet ver 1.0",
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "author": "Web23.io",
+  "action": {
+    "default_icon": "logo.png",
+    "default_title": "Open your super wallet",
+    "default_popup": "index.html"
+  },
+  "homepage_url": "https://web23.io",
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "unlimitedStorage",
+    "system.display",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "declarativeNetRequestFeedback"
+  ],
+  "host_permissions": ["http://*/", "https://*/"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
